@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="text-center">
+        <h1>Add Contact</h1>
+    </div>
+
+    <div style="width: 50%;margin:auto">
+    <form [formGroup]="addForm" novalidate class="form">
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-6">ID</div>
+            <div class="col-md-6"><input type="number" class="form-control" name="f_id" formControlName="f_id" required></div>
+        </div>  
+        
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-6">First Name</div>
+            <div class="col-md-6"><input type="text" class="form-control" name="f_firstname" formControlName="f_firstname"></div>
+        </div>  
+
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-6">Last Name</div>
+            <div class="col-md-6"><input type="text" class="form-control" name="f_lastname" formControlName="f_lastname"></div>
+        </div>  
+
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-6">Email</div>
+            <div class="col-md-6"><input type="text" class="form-control" name="f_email" formControlName="f_email"></div>
+        </div>  
+
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-6">Company ID</div>
+            <div class="col-md-6"><input type="number" class="form-control" name="f_companyid" formControlName="f_companyid"></div>
+        </div>  
+
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-12">
+                <button class="btn btn-success" (click)="onSubmit(addForm.value)">Add Contact</button>
+            </div>
+        </div>  
+
+        
+    </form>
+    </div>
+</div>

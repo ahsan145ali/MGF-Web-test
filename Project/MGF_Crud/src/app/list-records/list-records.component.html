@@ -1,0 +1,39 @@
+
+<label for="fieldSelect">Choose a Field:</label>
+<select id="fieldSelect"  name="selectedField" [(ngModel)]="selectedField">
+  <option value="id">ID</option>
+  <option value="firstname">First Name</option>
+  <option value="lastname">Last Name</option>
+  <option value="email">Email</option>
+  <option value="company_id">Company ID</option>
+</select>
+
+<label for="dataInput">Enter Data:</label>
+<input type="text" id="dataInput" [(ngModel)]="data" name="data">
+
+<button (click)="Filter()">Filter</button>
+
+<table class="table table-stripped" style="margin-top:15px;">
+    <button (click)="Sort('asc')">up</button>
+    <button (click)="Sort('des')" style="margin-left: 20px;">down</button>
+    <thead class="bg-primary">
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Company ID</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <ng-container *ngFor = "let contact of contacts">
+        <tr  *ngIf="!isEmptyContact(contact)">
+            <td>{{contact.id}}</td>
+            <td>{{contact.firstname}}</td>
+            <td>{{contact.lastname}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.company_id}}</td>
+            <td><a href="update/{{contact.id}}" class="btn btn-success">Edit</a>  |  <button (click)="deleteRecord(contact)" class="btn btn-info">Delete</button></td>
+        </tr>
+    </ng-container>
+    </tbody>
+</table>

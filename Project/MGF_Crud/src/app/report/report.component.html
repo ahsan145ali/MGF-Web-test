@@ -1,0 +1,17 @@
+
+<button (click) ="MakeReport()">Report</button>
+<table class="table table-stripped" style="margin-top:15px;">
+    <thead class="bg-primary">
+        <th>PostCode</th>
+        <th>Contacts</th>
+    </thead>
+    <tbody>
+        <ng-container *ngFor = "let entry of report">
+        <tr>
+            <td>{{entry.postcode}}</td>
+            <td>{{entry.contacts}}</td>
+            
+        </tr>
+    </ng-container>
+    </tbody>
+</table>
